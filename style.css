@@ -1,0 +1,272 @@
+/*
+ * This file is part of Snake-Game.
+ * Copyright (C) isMnw
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+:root {
+  --bg: #222831;
+  --panel: #6b6b6b;
+  --panel-2: #eee;
+  --accent: #f59e0b;
+  --muted: #ffffff;
+  --card: #393e46;
+  --glass: rgba(255, 255, 255, 0.03);
+  --ui-text: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--ui-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.card {
+  max-width: 1920px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  margin: auto;
+}
+
+.sidebar {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition-duration: 100ms;
+}
+
+.logo:hover {
+  transition-duration: 100ms;
+  transform: scale(1.1);
+}
+
+.logo-badge {
+  border-radius: 10px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+.btn {
+  width: 100%;
+  max-width: 240px;
+  background: linear-gradient(45deg, var(--panel-2), var(--panel));
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.08);
+  transition-duration: 100ms;
+}
+
+.btn:hover {
+  transition-duration: 100ms;
+  transform: scale(1.05);
+}
+
+.info {
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: var(--card);
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Thumb (tombol yang digeser) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(45deg, var(--panel), var(--panel-2));
+  border-radius: 10%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition-duration: 100ms;
+}
+
+/* Saat di-hover */
+input[type="range"]::-webkit-slider-thumb:hover {
+  transition-duration: 100ms;
+  transform: scale(1.2);
+}
+
+.static {
+  padding-left: 10px;
+  width: 50px;
+  justify-self: center;
+  padding-right: 10px;
+  background: var(--glass);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition-duration: 100ms;
+}
+
+.static:hover {
+  transition-duration: 100ms;
+  transform: scale(1.1);
+}
+
+.game-area {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.scorebox {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.score {
+  background: var(--glass);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.canvas-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  min-width: 1400px;
+  min-height: 750px;
+}
+
+.canvas-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 10%;
+  background-color: #eee;
+}
+
+canvas {
+  background: linear-gradient(135deg, #000000, #000000);
+  box-shadow: inset 0 -6px rgba(0, 0, 0, 0.25);
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.control-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ui-text);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .canvas-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}

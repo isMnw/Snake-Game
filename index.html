@@ -1,0 +1,138 @@
+<!--
+ * This file is part of Snake-Game.
+ * Copyright (C) isMnw
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <link rel="icon" href="assets\img\icon1.webp" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Logo -->
+          <div class="logo">
+            <div class="logo-badge">
+              <img src="assets\img\icon1.webp" width="100%" alt="" />
+            </div>
+            Snake
+          </div>
+
+          <!-- Menu Buttons -->
+          <div class="menu">
+            <span class="btn" id="playBtn" onclick="playBtn()">Play</span>
+            <span class="btn" id="pauseResumeBtn" onclick="togglePause()"
+              >Pause/Resume</span
+            >
+            <span class="btn" id="restartBtn" onclick="restartBtn()"
+              >Restart</span
+            >
+          </div>
+
+          <!-- Instructions -->
+          <div class="info">
+            <div style="font-weight: 700; margin-bottom: 6px">How to play</div>
+            Press 'Enter' to start.<br />Use arrow keys or WASD to move.
+            <br />
+            Eat apples to grow. Don't hit walls or yourself.<br />
+            Press 'P' to pause or resume.<br />
+            Press 'R' to restart the game.
+          </div>
+
+          <!-- High Score -->
+          <div class="info" id="highInfo">
+            <div style="font-weight: 700; margin-bottom: 6px">High Score</div>
+            <div id="highScoreVal">—</div>
+            <span
+              id="resetHighBtn"
+              style="font-size: 10px; cursor: pointer"
+              onclick="resetHighBtn()"
+              ><u>Reset High Score</u></span
+            >
+          </div>
+
+          <!-- Settings -->
+          <div class="info" style="margin-top: auto">
+            <div style="font-weight: 700; margin-bottom: 6px">Settings</div>
+
+            <label style="display: block; font-size: 15px; margin: 6px">
+              Speed: <span id="speedVal">10</span>
+            </label>
+            <input type="range" id="speedRange" min="5" max="25" value="10" />
+
+            <label style="display: block; font-size: 15px; margin: 6px">
+              Map Resolution:
+              <span id="mapValW">0</span> Cols *
+              <span id="mapValH">0</span> Rows
+            </label>
+            <input type="range" id="mapRes" min="15" max="35" value="20" />
+
+            <label style="display: block; font-size: 15px; margin: 6px">
+              Static Level:
+              <div
+                class="static"
+                id="staticLvl"
+                style="font-size: 20px"
+                onclick="statusSwitch()"
+              >
+                <span>Off</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="game-area">
+          <!-- HUD -->
+          <div class="hud">
+            <div class="scorebox">
+              <div class="score">Score: <span id="score">0</span></div>
+              <div class="score">Length: <span id="length">1</span></div>
+              <div class="score">Level: <span id="level">1</span></div>
+            </div>
+          </div>
+
+          <!-- Canvas -->
+          <div class="canvas-wrap">
+            <div class="canvas-border">
+              <canvas id="game" width="800" height="600"></canvas>
+            </div>
+          </div>
+
+          <!-- Audio -->
+
+          <audio id="eatSound" src="assets/sound/eat.wav"></audio>
+          <audio id="gameOverSound" src="assets/sound/gameOver.wav"></audio>
+          <audio id="moveSound" src="assets/sound/move.wav" loop></audio>
+
+          <!-- Footer -->
+          <div class="footer">
+            <div id="msg">Ready — press Play</div>
+            <div>Credit - isMnw: Built with HTML/CSS/JS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/game.js"></script>
+  </body>
+</html>
