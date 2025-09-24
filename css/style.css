@@ -51,18 +51,17 @@ body {
 }
 
 .card {
-  max-width: 1920px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.02),
     rgba(255, 255, 255, 0.01)
   );
   border-radius: 14px;
-  padding: 24px;
+  padding: 10px;
   box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
   display: grid;
   grid-template-columns: 300px 1fr;
-  gap: 24px;
+  gap: 10px;
   align-items: start;
   border: 1px solid rgba(255, 255, 255, 0.03);
   margin: auto;
@@ -71,11 +70,11 @@ body {
 .sidebar {
   background: var(--card);
   border-radius: 12px;
-  padding: 16px;
+  padding: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo {
@@ -189,10 +188,10 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .game-area {
   background: var(--card);
   border-radius: 12px;
-  padding: 16px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
 }
 .hud {
   display: flex;
@@ -217,8 +216,6 @@ input[type="range"]::-webkit-slider-thumb:hover {
   gap: 20px;
   align-items: center;
   justify-content: center;
-  min-width: 1400px;
-  min-height: 750px;
 }
 
 .canvas-border {
@@ -270,4 +267,3 @@ canvas {
     align-items: center;
   }
 }
-
