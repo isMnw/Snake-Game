@@ -181,10 +181,13 @@ speedRange.addEventListener("input", () => {
 });
 mapRes.addEventListener("input", () => {
   mapArea = Number(mapRes.value);
+});
+mapRes.addEventListener("change", () => {
   setCanvas();
+  restartGame();
   mapValW.textContent = cols;
   mapValH.textContent = rows;
-  restartGame();
+  msg.textContent = "Map size changed";
 });
 
 function statusSwitch() {
