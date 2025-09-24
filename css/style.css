@@ -65,6 +65,7 @@ body {
   align-items: start;
   border: 1px solid rgba(255, 255, 255, 0.03);
   margin: auto;
+  scale: 80%;
 }
 
 .sidebar {
@@ -267,3 +268,4 @@ canvas {
     align-items: center;
   }
 }
+
